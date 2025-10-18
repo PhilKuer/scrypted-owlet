@@ -1,0 +1,110 @@
+{
+   "name": "scrypted-owlet-camera",
+   "version": "1.0.1",
+   "description": "Owlet baby monitor camera integration for Scrypted with HomeKit support",
+   "main": "src/main.py",
+   "scripts": {
+      "scrypted-setup-project": "scrypted-setup-project",
+      "prescrypted-setup-project": "scrypted-package-json",
+      "build": "scrypted-webpack",
+      "preprepublishOnly": "scrypted-changelog",
+      "prepublishOnly": "NODE_ENV=production scrypted-webpack",
+      "prescrypted-vscode-launch": "scrypted-webpack",
+      "scrypted-vscode-launch": "scrypted-deploy-debug",
+      "scrypted-deploy-debug": "scrypted-deploy-debug",
+      "scrypted-debug": "scrypted-debug",
+      "scrypted-deploy": "scrypted-deploy",
+      "scrypted-changelog": "scrypted-changelog",
+      "scrypted-package-json": "scrypted-package-json",
+      "scrypted-readme": "scrypted-readme",
+      "scrypted-watch": "scrypted-webpack --watch",
+      "dev": "npm run scrypted-watch",
+      "watch": "tsc --watch",
+      "test": "echo \"No tests specified\" && exit 0",
+      "python-test": "python3 python/tutk-stream.py --id test --username test --password test --auth-key test --snapshot"
+   },
+   "keywords": [
+      "scrypted",
+      "plugin",
+      "owlet",
+      "camera",
+      "homekit",
+      "baby-monitor",
+      "tutk",
+      "iotc",
+      "p2p",
+      "streaming"
+   ],
+   "author": "Andrew Franke <afranke@gmail.com>",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/frankea/scrypted-owlet-camera.git"
+   },
+   "bugs": {
+      "url": "https://github.com/frankea/scrypted-owlet-camera/issues"
+   },
+   "homepage": "https://github.com/frankea/scrypted-owlet-camera#readme",
+   "dependencies": {
+      "axios": "^1.6.0",
+      "fluent-ffmpeg": "^2.1.2"
+   },
+   "peerDependencies": {
+      "@scrypted/sdk": "*"
+   },
+   "devDependencies": {
+      "@scrypted/sdk": "^0.5.29",
+      "@types/axios": "^0.9.36",
+      "@types/fluent-ffmpeg": "^2.1.24",
+      "@types/node": "^24.0.10",
+      "typescript": "^5.0.0"
+   },
+   "engines": {
+      "node": ">=16.0.0"
+   },
+   "files": [
+      "out/**/*",
+      "README.md",
+      "package.json"
+   ],
+   "scrypted": {
+      "name": "Owlet Camera",
+      "runtime": "python",
+      "type": "DeviceProvider",
+      "interfaces": [
+         "DeviceProvider",
+         "Settings"
+      ],
+      "pluginDependencies": ["@scrypted/prebuffer-mixin"],
+      "pluginInfo": {
+         "description": "Connect Owlet baby monitor cameras to HomeKit via Scrypted",
+         "version": "1.0.1",
+         "author": "Andrew Franke <afranke@gmail.com>",
+         "license": "MIT",
+         "homepage": "https://github.com/frankea/scrypted-owlet-camera",
+         "repository": "https://github.com/frankea/scrypted-owlet-camera.git"
+      },
+      "settings": {
+         "email": {
+            "title": "Owlet Email",
+            "description": "Your Owlet account email address",
+            "type": "string",
+            "required": true
+         },
+         "password": {
+            "title": "Owlet Password",
+            "description": "Your Owlet account password",
+            "type": "password",
+            "required": true
+         },
+         "refreshInterval": {
+            "title": "Device Refresh Interval (minutes)",
+            "description": "How often to refresh the device list",
+            "type": "number",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 60
+         }
+      }
+   }
+}

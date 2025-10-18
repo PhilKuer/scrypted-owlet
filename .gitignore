@@ -1,0 +1,95 @@
+# Build outputs
+.DS_Store
+out/
+node_modules/
+dist/
+.venv
+package-lock.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Analysis and reverse engineering files (may contain sensitive data)
+flows.txt
+owlet_flows.txt
+filtered.txt
+extract_kms.py
+OwletDream.hop
+com.owletcare.Sleep-3.19.0-Decrypted.ipa
+com.owletcare.Sleep-3.19.0-Decrypted/
+
+# Traffic analysis files
+flows_analysis.json
+streaming_endpoints_analysis.json
+*.pcap
+*.cap
+capture-traffic.sh
+analyze-flows.py
+mitmproxy-analysis.py
+save_flows.py
+test-discovered-endpoints.sh
+
+# Documentation with sensitive analysis
+IDA_REVERSE_ENGINEERING_REPORT.md
+PYTHON-IMPLEMENTATION-SUMMARY.md
+PYTHON-WRAPPER.md
+README-traffic-analysis.md
+SCRYPTED-TUTK-ANALYSIS.md
+streaming-analysis.md
+streaming-implementation-guide.md
+traffic-analysis-guide.md
+traffic-analysis-results-final.md
+traffic-analysis-results.md
+traffic-analysis-summary.md
+
+# Backup files
+owlet-backup-*.tar.gz
+*.backup
+*.bak
+
+# Test files
+test-python-wrapper.js
+test-streaming-discovery.ts
+implementation-example.ts
+
+# Reference directories with potential secrets
+scrypted-reference/
+python/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/

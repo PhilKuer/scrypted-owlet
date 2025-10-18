@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Source files (only ship dist/)
+src/
+*.ts
+tsconfig.json
+
+# Build artifacts
+*.tgz
+*.log
+
+# Development files
+.git/
+.gitignore
+.vscode/
+.DS_Store
+test/
+*.test.js
+*.spec.js
+
+# Documentation (optional - you might want to keep README)
+# README.md
+
+# Only ship what's needed
