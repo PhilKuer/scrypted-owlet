@@ -64,6 +64,9 @@
    },
    "files": [
       "out/**/*",
+      "src/*.py",
+      "requirements.txt",
+      "requirements.scrypted.txt",
       "README.md",
       "package.json"
    ],
